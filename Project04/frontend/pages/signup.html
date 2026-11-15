@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Create your Udaan account and discover education, scholarship and career opportunities.">
+
+    <title>Create Account | Udaan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Existing Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Authentication JavaScript -->
+    <script src="../js/auth.js" defer></script>
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-layout signup-layout">
+
+        <!-- LEFT SIDE: BRANDING -->
+
+        <section class="auth-visual">
+
+            <a href="../index.html" class="logo auth-logo">
+                <span class="logo-icon">U</span>
+                <span>udaan<span class="logo-dot">.</span></span>
+            </a>
+
+            <div class="auth-visual-content">
+
+                <span class="section-tag">
+                    YOUR NEXT CHAPTER
+                </span>
+
+                <h1>
+                    Your dreams.
+                    <span>Your possibilities.</span>
+                </h1>
+
+                <p>
+                    Join a platform that helps you discover
+                    opportunities, build skills and take
+                    confident steps towards independence.
+                </p>
+
+                <div class="auth-illustration">
+
+                    <div class="auth-illustration-circle"></div>
+
+                    <div class="auth-emoji">
+                        🌸
+                    </div>
+
+                    <span class="auth-floating floating-one">📖</span>
+                    <span class="auth-floating floating-two">🚀</span>
+                    <span class="auth-floating floating-three">💜</span>
+
+                </div>
+
+                <div class="auth-quote">
+                    "A new beginning can change everything."
+                </div>
+
+            </div>
+
+            <p class="auth-copyright">
+                © <span id="auth-year"></span> Udaan. Learn. Earn. Grow.
+            </p>
+
+        </section>
+
+
+        <!-- RIGHT SIDE: SIGNUP FORM -->
+
+        <section class="auth-form-section">
+
+            <div class="auth-form-wrapper signup-wrapper">
+
+                <div class="auth-mobile-logo">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-icon">U</span>
+                        <span>udaan<span class="logo-dot">.</span></span>
+                    </a>
+                </div>
+
+                <div class="auth-heading">
+
+                    <span class="section-tag">
+                        START YOUR JOURNEY
+                    </span>
+
+                    <h2>Create your account</h2>
+
+                    <p>
+                        Tell us a little about yourself.
+                    </p>
+
+                </div>
+
+
+                <!-- SIGNUP FORM -->
+
+                <form id="signup-form" class="auth-form" novalidate>
+
+                    <div class="form-group">
+
+                        <label for="signup-name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signup-name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="60"
+                            required
+                        >
+
+                        <small class="field-error"
+                            id="signup-name-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signup-email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="signup-email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small class="field-error"
+                            id="signup-email-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signup-password">
+                            Create Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="signup-password"
+                                name="password"
+                                placeholder="Create a strong password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="signup-password"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                                Show
+                            </button>
+
+                        </div>
+
+                        <small class="field-hint">
+                            At least 8 characters, including uppercase,
+                            lowercase and a number.
+                        </small>
+
+                        <small class="field-error"
+                            id="signup-password-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirm-password">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                name="confirmPassword"
+                                placeholder="Re-enter your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirm-password"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                                Show
+                            </button>
+
+                        </div>
+
+                        <small class="field-error"
+                            id="confirm-password-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="terms-group">
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to the
+                                <a href="#terms"
+                                    class="text-link">
+                                    Terms and Conditions
+                                </a>
+                                and
+                                <a href="#privacy"
+                                    class="text-link">
+                                    Privacy Policy
+                                </a>.
+                            </span>
+
+                        </label>
+
+                        <small class="field-error"
+                            id="terms-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-message"
+                        id="signup-message"
+                        role="status"
+                        aria-live="polite">
+                    </div>
+
+
+                    <button type="submit"
+                        class="btn btn-primary auth-submit">
+                        Create My Account →
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>ALREADY A MEMBER?</span>
+                </div>
+
+
+                <p class="auth-switch">
+                    Already have an account?
+
+                    <a href="login.html" class="text-link">
+                        Login
+                    </a>
+                </p>
+
+
+                <a href="../index.html" class="back-home">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

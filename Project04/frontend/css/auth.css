@@ -1,0 +1,594 @@
+
+/* =========================================
+   UDAAN - AUTHENTICATION DESIGN
+========================================= */
+
+
+/* =========================================
+   1. MAIN LAYOUT
+========================================= */
+
+.auth-body {
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   2. LEFT BRANDING SECTION
+========================================= */
+
+.auth-visual {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+    padding: 45px 55px;
+
+    background:
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(255, 255, 255, 0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #EEE7FA,
+            #F8EDF7
+        );
+}
+
+.auth-logo {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+}
+
+.auth-visual-content {
+    position: relative;
+    z-index: 1;
+    max-width: 510px;
+    margin: auto 0;
+    padding-block: 35px;
+}
+
+.auth-visual-content h1 {
+    font-size: clamp(38px, 4.5vw, 55px);
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+.auth-visual-content h1 span {
+    display: block;
+    color: var(--primary-color);
+}
+
+.auth-visual-content > p {
+    max-width: 430px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.auth-quote {
+    margin-top: 25px;
+    color: var(--primary-dark);
+    font-size: 13px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+/* =========================================
+   3. AUTHENTICATION ILLUSTRATION
+========================================= */
+
+.auth-illustration {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    height: 220px;
+    margin-top: 20px;
+}
+
+.auth-illustration-circle {
+    position: absolute;
+    width: 195px;
+    height: 195px;
+
+    background: linear-gradient(
+        135deg,
+        #D8C6F3,
+        #F8DCEB
+    );
+
+    border-radius: 50%;
+}
+
+.auth-emoji {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 125px;
+    height: 125px;
+
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+
+    font-size: 65px;
+    box-shadow: var(--shadow-md);
+}
+
+.auth-floating {
+    position: absolute;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    background: #FFFFFF;
+    border-radius: 13px;
+
+    font-size: 22px;
+    box-shadow: var(--shadow-md);
+}
+
+.floating-one {
+    top: 12px;
+    left: 20%;
+}
+
+.floating-two {
+    top: 20px;
+    right: 20%;
+}
+
+.floating-three {
+    bottom: 12px;
+    right: 27%;
+}
+
+.auth-copyright {
+    position: relative;
+    z-index: 1;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   4. RIGHT FORM SECTION
+========================================= */
+
+.auth-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 55px 40px;
+    background: #FFFFFF;
+}
+
+.auth-form-wrapper {
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-mobile-logo {
+    display: none;
+}
+
+.auth-heading {
+    margin-bottom: 35px;
+}
+
+.auth-heading .section-tag {
+    margin-bottom: 18px;
+}
+
+.auth-heading h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.auth-heading p {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   5. FORM ELEMENTS
+========================================= */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.auth-form input:not([type="checkbox"]) {
+    width: 100%;
+    min-height: 49px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+
+    background: #FFFFFF;
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.auth-form input::placeholder {
+    color: #AAA5B4;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 74, 182, 0.10);
+}
+
+.auth-form input.invalid {
+    border-color: #D94B4B;
+    box-shadow: 0 0 0 3px rgba(217, 75, 75, 0.08);
+}
+
+
+/* =========================================
+   6. PASSWORD FIELD
+========================================= */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px !important;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: var(--primary-dark);
+}
+
+.field-hint {
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   7. LINKS AND CHECKBOXES
+========================================= */
+
+.text-link {
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.text-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.7;
+
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.terms-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* =========================================
+   8. VALIDATION MESSAGES
+========================================= */
+
+.field-error {
+    min-height: 0;
+    color: #D94B4B;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.form-message {
+    display: none;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.form-message.error {
+    display: block;
+    color: #A52B2B;
+    background: #FFF0F0;
+    border: 1px solid #FFD2D2;
+}
+
+.form-message.success {
+    display: block;
+    color: #176B3A;
+    background: #EAF8EF;
+    border: 1px solid #C5EBD0;
+}
+
+
+/* =========================================
+   9. SUBMIT BUTTON
+========================================= */
+
+.auth-submit {
+    width: 100%;
+    min-height: 49px;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.auth-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   10. FORM DIVIDER
+========================================= */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0 20px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.auth-divider span {
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: 13px;
+}
+
+.auth-switch .text-link {
+    margin-left: 4px;
+}
+
+.back-home {
+    display: block;
+    width: fit-content;
+    margin: 28px auto 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.back-home:hover {
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   11. SIGNUP FORM ADJUSTMENTS
+========================================= */
+
+.signup-wrapper .auth-heading {
+    margin-bottom: 25px;
+}
+
+.signup-wrapper .auth-form {
+    gap: 16px;
+}
+
+.signup-wrapper .form-group {
+    gap: 7px;
+}
+
+.signup-layout .auth-visual {
+    min-height: 100%;
+}
+
+
+/* =========================================
+   12. ACCESSIBILITY
+========================================= */
+
+.auth-form input:focus-visible,
+.auth-form button:focus-visible,
+.auth-form a:focus-visible,
+.checkbox-label input:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   13. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .auth-layout {
+        grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .auth-visual {
+        padding: 35px;
+    }
+
+    .auth-form-section {
+        padding-inline: 30px;
+    }
+
+    .auth-visual-content h1 {
+        font-size: 38px;
+    }
+
+    .auth-illustration {
+        height: 190px;
+    }
+
+}
+
+
+/* =========================================
+   14. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+
+    .auth-layout {
+        display: block;
+    }
+
+    .auth-visual {
+        display: none;
+    }
+
+    .auth-form-section {
+        min-height: 100vh;
+        padding: 35px 22px;
+        align-items: center;
+    }
+
+    .auth-form-wrapper {
+        max-width: 460px;
+    }
+
+    .auth-mobile-logo {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .auth-heading h2 {
+        font-size: 28px;
+    }
+
+    .auth-heading {
+        margin-bottom: 28px;
+    }
+
+}
+
+
+/* =========================================
+   15. SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .auth-form-section {
+        padding-inline: 16px;
+    }
+
+    .auth-heading h2 {
+        font-size: 25px;
+    }
+
+    .label-row {
+        align-items: flex-start;
+    }
+
+    .auth-divider {
+        gap: 8px;
+    }
+
+}

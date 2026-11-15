@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Login to your Udaan account and continue your journey towards education and independence.">
+
+    <title>Login | Udaan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Existing Global CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Authentication JavaScript -->
+    <script src="../js/auth.js" defer></script>
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-layout">
+
+        <!-- LEFT SIDE: BRANDING -->
+
+        <section class="auth-visual">
+
+            <a href="../index.html" class="logo auth-logo">
+                <span class="logo-icon">U</span>
+                <span>udaan<span class="logo-dot">.</span></span>
+            </a>
+
+            <div class="auth-visual-content">
+
+                <span class="section-tag">
+                    WELCOME BACK
+                </span>
+
+                <h1>
+                    Your journey
+                    <span>continues here.</span>
+                </h1>
+
+                <p>
+                    Every small step brings you closer
+                    to the future you imagine.
+                    Let's keep growing together.
+                </p>
+
+                <div class="auth-illustration">
+
+                    <div class="auth-illustration-circle"></div>
+
+                    <div class="auth-emoji">
+                        🌱
+                    </div>
+
+                    <span class="auth-floating floating-one">📚</span>
+                    <span class="auth-floating floating-two">🎓</span>
+                    <span class="auth-floating floating-three">✨</span>
+
+                </div>
+
+                <div class="auth-quote">
+                    "Believe in your journey.
+                    Your possibilities are endless."
+                </div>
+
+            </div>
+
+            <p class="auth-copyright">
+                © <span id="auth-year"></span> Udaan. Learn. Earn. Grow.
+            </p>
+
+        </section>
+
+
+        <!-- RIGHT SIDE: LOGIN FORM -->
+
+        <section class="auth-form-section">
+
+            <div class="auth-form-wrapper">
+
+                <div class="auth-mobile-logo">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-icon">U</span>
+                        <span>udaan<span class="logo-dot">.</span></span>
+                    </a>
+                </div>
+
+                <div class="auth-heading">
+
+                    <span class="section-tag">
+                        YOUR FUTURE AWAITS
+                    </span>
+
+                    <h2>Welcome back!</h2>
+
+                    <p>
+                        Enter your details to access your account.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="login-form" class="auth-form" novalidate>
+
+                    <div class="form-group">
+
+                        <label for="login-email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small class="field-error"
+                            id="login-email-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="label-row">
+
+                            <label for="login-password">
+                                Password
+                            </label>
+
+                            <a href="#forgot-password"
+                                class="text-link"
+                                id="forgot-password-link">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="login-password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="login-password"
+                                aria-label="Show password"
+                                aria-pressed="false">
+                                Show
+                            </button>
+
+                        </div>
+
+                        <small class="field-error"
+                            id="login-password-error"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="checkbox-label">
+                            <input
+                                type="checkbox"
+                                id="remember-me"
+                                name="remember"
+                            >
+
+                            <span>Remember me</span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-message"
+                        id="login-message"
+                        role="status"
+                        aria-live="polite">
+                    </div>
+
+
+                    <button type="submit"
+                        class="btn btn-primary auth-submit">
+                        Login to Your Account →
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>NEW TO UDAAN?</span>
+                </div>
+
+
+                <p class="auth-switch">
+                    Don't have an account?
+
+                    <a href="signup.html" class="text-link">
+                        Create Account
+                    </a>
+                </p>
+
+
+                <a href="../index.html" class="back-home">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Udaan</title>
+
+    <meta name="description" content="Your personal Udaan dashboard for learning, earning and growing.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="../js/dashboard.js" defer></script>
+    <script src="../js/api.js" defer></script>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- MOBILE OVERLAY -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="../index.html" class="brand">
+                <span class="brand-icon">U</span>
+                <span>udaan<span class="brand-dot">.</span></span>
+            </a>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">A</div>
+
+                <div>
+                    <h3 id="sidebar-user-name">Ananya</h3>
+                    <p>Udaan Member</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-navigation" aria-label="Main navigation">
+
+                <p class="nav-heading">MENU</p>
+
+                <a href="#overview" class="nav-link active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="#opportunities" class="nav-link">
+                    <span>🎓</span>
+                    Opportunities
+                </a>
+
+                <a href="#agents" class="nav-link">
+                    <span>✦</span>
+                    AI Agents
+                </a>
+
+                <a href="#learning" class="nav-link">
+                    <span>📚</span>
+                    My Learning
+                </a>
+
+                <a href="#students-section" class="nav-link" id="nav-students">
+                    <span>📋</span>
+                    Student Records
+                </a>
+
+
+                <p class="nav-heading support-heading">SUPPORT</p>
+
+                <a href="#support" class="nav-link">
+                    <span>🤝</span>
+                    Get Support
+                </a>
+
+                <a href="#profile" class="nav-link">
+                    <span>👤</span>
+                    My Profile
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <div class="help-icon">💜</div>
+
+                    <h4>Need a little help?</h4>
+
+                    <p>
+                        Your journey matters. We're here to support you.
+                    </p>
+
+                    <a href="#support">Explore support →</a>
+                </div>
+
+                <a href="../index.html" class="logout-link">
+                    <span>↗</span>
+                    Back to Home
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="overview">
+
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="sidebar"
+                >
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    My Space <span>/</span> Dashboard
+                </div>
+
+                <div class="topbar-actions">
+
+                    <span class="topbar-label">Your journey, your pace 💜</span>
+
+                    <div class="topbar-avatar" id="topbar-avatar">A</div>
+
+                </div>
+
+            </header>
+
+
+            <div class="dashboard-content">
+
+
+                <!-- WELCOME SECTION -->
+                <section class="welcome-section">
+
+                    <div class="welcome-text">
+
+                        <span class="welcome-tag">YOUR PERSONAL SPACE</span>
+
+                        <h1>
+                            <span id="greeting">Good morning</span>,
+                            <span id="welcome-name">Ananya</span>! 👋
+                        </h1>
+
+                        <p>
+                            Every small step takes you closer to your dreams.
+                            Let's make today count.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-illustration">
+                        <div class="illustration-circle">
+                            🌸
+                        </div>
+                        <span class="floating-star">✦</span>
+                    </div>
+
+                </section>
+
+
+                <!-- PROFILE AND PROGRESS -->
+                <section class="overview-grid">
+
+                    <article class="overview-card profile-card" id="profile">
+
+                        <div class="card-top">
+                            <span class="card-label">YOUR PROFILE</span>
+                            <span class="card-icon">👤</span>
+                        </div>
+
+                        <h2>Keep growing!</h2>
+
+                        <p class="card-description">
+                            Your profile helps us find opportunities
+                            that match your goals.
+                        </p>
+
+                        <div class="profile-details">
+
+                            <div>
+                                <span>Education</span>
+                                <strong id="profile-education">Undergraduate</strong>
+                            </div>
+
+                            <div>
+                                <span>Main goal</span>
+                                <strong id="profile-goal">Learn new skills</strong>
+                            </div>
+
+                        </div>
+
+                        <a href="#profile" class="text-link">
+                            View profile →
+                        </a>
+
+                    </article>
+
+
+                    <article class="overview-card progress-card" id="learning">
+
+                        <div class="card-top">
+                            <span class="card-label">YOUR LEARNING JOURNEY</span>
+                            <span class="card-icon">📈</span>
+                        </div>
+
+                        <div class="progress-heading">
+                            <h2>You're making progress!</h2>
+                            <strong id="progress-number">40%</strong>
+                        </div>
+
+                        <div
+                            class="dashboard-progress-track"
+                            role="progressbar"
+                            aria-label="Learning task progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="40"
+                            id="dashboard-progress"
+                        >
+                            <div
+                                class="dashboard-progress-fill"
+                                id="dashboard-progress-fill"
+                            ></div>
+                        </div>
+
+                        <p class="card-description">
+                            Complete your suggested tasks to move forward.
+                        </p>
+
+                        <span class="progress-caption" id="progress-caption">
+                            2 of 5 suggested tasks completed
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+                <!-- OPPORTUNITIES -->
+                <section class="dashboard-section" id="opportunities">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-tag">DISCOVER YOUR POTENTIAL</span>
+                            <h2>Opportunities for you</h2>
+                            <p>Explore options that can help you move ahead.</p>
+                        </div>
+
+                        <a href="#opportunities" class="view-all-link">
+                            View all →
+                        </a>
+
+                    </div>
+
+
+                    <div class="opportunity-grid">
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon scholarship-icon">
+                                🎓
+                            </div>
+
+                            <span class="opportunity-type">FINANCIAL SUPPORT</span>
+
+                            <h3>Scholarship Opportunities</h3>
+
+                            <p>
+                                Discover financial assistance programmes
+                                that may support your education.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore scholarships →
+                            </a>
+
+                        </article>
+
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon skill-icon">
+                                💻
+                            </div>
+
+                            <span class="opportunity-type">SKILL DEVELOPMENT</span>
+
+                            <h3>Learn New Skills</h3>
+
+                            <p>
+                                Explore digital skills, communication
+                                and career-focused learning.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore learning →
+                            </a>
+
+                        </article>
+
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon earning-icon">
+                                💼
+                            </div>
+
+                            <span class="opportunity-type">EARNING OPTIONS</span>
+
+                            <h3>Learn While You Earn</h3>
+
+                            <p>
+                                Discover internships, flexible work
+                                and beginner-friendly opportunities.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore opportunities →
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- AI AGENTS -->
+                <section class="dashboard-section" id="agents">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-tag">YOUR PERSONAL AI SUPPORT TEAM</span>
+                            <h2>Meet your Udaan AI agents</h2>
+                            <p>Each agent helps with a different part of your journey.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="agents-grid">
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🧭</div>
+                            <h3>Barrier Assessment</h3>
+                            <p>Understand challenges that may affect your progress.</p>
+                            <button class="agent-button" data-agent="barrier">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🎓</div>
+                            <h3>Education Pathway</h3>
+                            <p>Discover education options and suitable learning paths.</p>
+                            <button class="agent-button" data-agent="education">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">💰</div>
+                            <h3>Scholarship & Financial Aid</h3>
+                            <p>Find possible scholarships and financial support.</p>
+                            <button class="agent-button" data-agent="scholarship">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">💼</div>
+                            <h3>Earn & Learn</h3>
+                            <p>Explore internships and flexible earning options.</p>
+                            <button class="agent-button" data-agent="earning">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🚀</div>
+                            <h3>Career & Skill Roadmap</h3>
+                            <p>Build a practical roadmap towards your career goals.</p>
+                            <button class="agent-button" data-agent="career">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🤝</div>
+                            <h3>Women Mentorship & Support</h3>
+                            <p>Discover guidance, mentorship and support resources.</p>
+                            <button class="agent-button" data-agent="mentorship">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">📅</div>
+                            <h3>AI Guidance & Study Planner</h3>
+                            <p>Organise your learning with a structured study plan.</p>
+                            <button class="agent-button" data-agent="planner">
+                                Explore agent →
+                            </button>
+                        </article>
+
+                    </div>
+
+
+                    <!-- AGENT DETAIL PANEL -->
+                    <div
+                        class="agent-detail-panel"
+                        id="agent-detail-panel"
+                        hidden
+                        aria-live="polite"
+                    >
+
+                        <div class="agent-detail-content">
+                            <span class="detail-tag">UDAAN AI AGENT</span>
+                            <h3 id="agent-detail-title"></h3>
+                            <p id="agent-detail-description"></p>
+                            <span class="coming-soon-label">
+                                Backend integration coming soon
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="close-agent-detail"
+                            class="close-detail-btn"
+                            aria-label="Close agent details"
+                        >
+                            ✕
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================================
+                     STUDENT RECORDS / API INTEGRATION SECTION
+                ========================================= -->
+                <section class="dashboard-section api-integration-section" id="students-section">
+
+                    <div class="section-heading api-section-heading">
+
+                        <div>
+                            <span class="section-tag">✨ FULL-STACK API INTEGRATION</span>
+                            <h2>Student Records Management</h2>
+                            <p>Real-time data flow connecting Udaan frontend with FastAPI backend and SQLite database.</p>
+                        </div>
+
+                        <!-- API Connection Status Badge -->
+                        <div class="api-status-widget" id="api-status-widget">
+                            <div class="status-indicator" id="status-indicator">
+                                <span class="status-pulse" id="status-pulse"></span>
+                                <span class="status-label" id="status-label">Checking API...</span>
+                            </div>
+                            <button type="button" class="btn-check-api" id="btn-check-api" title="Check API connectivity">
+                                ↻ Check Status
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Global Section Alert/Banner -->
+                    <div class="api-banner" id="api-banner" hidden role="alert" aria-live="polite">
+                        <span class="banner-icon" id="banner-icon">ℹ️</span>
+                        <div class="banner-text" id="banner-text"></div>
+                        <button type="button" class="banner-close" id="banner-close" aria-label="Close notification">✕</button>
+                    </div>
+
+                    <!-- Two-Column API Grid: Form (Register) + Records Table -->
+                    <div class="api-grid">
+
+                        <!-- CARD 1: REGISTER STUDENT -->
+                        <article class="api-card register-card">
+
+                            <div class="card-top">
+                                <div>
+                                    <span class="card-label">NEW RECORD</span>
+                                    <h3 class="api-card-title">Register a Student</h3>
+                                </div>
+                                <span class="card-icon">📝</span>
+                            </div>
+
+                            <p class="card-description">
+                                Add a student record directly into SQLite via <code>POST /students</code>.
+                            </p>
+
+                            <form id="form-register-student" class="api-form" novalidate>
+
+                                <div class="api-form-group">
+                                    <label for="student-name">
+                                        Full Name <span class="required-star">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="student-name"
+                                        name="name"
+                                        placeholder="e.g. Priya Sharma"
+                                        required
+                                        minlength="2"
+                                        maxlength="50"
+                                        autocomplete="name"
+                                    >
+                                    <span class="field-error" id="error-name" hidden></span>
+                                </div>
+
+                                <div class="api-form-group">
+                                    <label for="student-email">
+                                        Email Address <span class="required-star">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="student-email"
+                                        name="email"
+                                        placeholder="e.g. priya.sharma@example.com"
+                                        required
+                                        autocomplete="email"
+                                    >
+                                    <span class="field-error" id="error-email" hidden></span>
+                                </div>
+
+                                <div class="api-form-group">
+                                    <label for="student-course">
+                                        Course / Programme <span class="required-star">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="student-course"
+                                        name="course"
+                                        placeholder="e.g. Web Development"
+                                        required
+                                        minlength="2"
+                                        maxlength="100"
+                                    >
+                                    <span class="field-error" id="error-course" hidden></span>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" id="btn-register" class="btn-udaan-primary">
+                                        <span class="btn-icon">➕</span>
+                                        <span class="btn-text">Register Student</span>
+                                    </button>
+                                </div>
+
+                                <!-- Form Message -->
+                                <div class="form-feedback" id="register-feedback" hidden></div>
+
+                            </form>
+
+                        </article>
+
+
+                        <!-- CARD 2: DISPLAY DATABASE RECORDS -->
+                        <article class="api-card records-card">
+
+                            <div class="card-top">
+                                <div>
+                                    <span class="card-label">DATABASE TABLE</span>
+                                    <div class="records-title-row">
+                                        <h3 class="api-card-title">Enrolled Students</h3>
+                                        <span class="student-count-badge" id="student-count">0 students</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-refresh-data" id="btn-refresh" title="Reload students from API">
+                                    <span>↻</span> Refresh
+                                </button>
+                            </div>
+
+                            <p class="card-description">
+                                Live data loaded from SQLite via <code>GET /students</code>.
+                            </p>
+
+                            <!-- Table Feedback Banner -->
+                            <div class="table-feedback" id="table-feedback" hidden></div>
+
+                            <!-- Loading State -->
+                            <div class="api-loading-state" id="students-loading">
+                                <div class="udaan-spinner"></div>
+                                <p>Loading student records from backend...</p>
+                            </div>
+
+                            <!-- Empty State -->
+                            <div class="api-empty-state" id="students-empty" hidden>
+                                <div class="empty-icon">📂</div>
+                                <h4>No Student Records Found</h4>
+                                <p>The database is currently empty. Use the registration form to add your first student record.</p>
+                            </div>
+
+                            <!-- Offline State -->
+                            <div class="api-offline-state" id="students-offline" hidden>
+                                <div class="offline-icon">🔌</div>
+                                <h4>Backend Service Offline</h4>
+                                <p>Unable to connect to <code>http://127.0.0.1:8000</code>. Please start the FastAPI backend server to view and manage student records.</p>
+                                <button type="button" class="btn-udaan-secondary" id="btn-offline-retry">
+                                    ↻ Retry Connection
+                                </button>
+                            </div>
+
+                            <!-- Responsive Table -->
+                            <div class="table-responsive" id="students-table-wrapper" hidden>
+                                <table class="udaan-table" id="students-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Student Name</th>
+                                            <th>Email</th>
+                                            <th>Course</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="students-table-body">
+                                        <!-- Dynamic student rows rendered by api.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TASKS AND SUPPORT -->
+                <section class="bottom-grid" id="support">
+
+                    <article class="tasks-card">
+
+                        <div class="section-heading compact-heading">
+
+                            <div>
+                                <span class="section-tag">SMALL STEPS, BIG DREAMS</span>
+                                <h2>Your next steps</h2>
+                            </div>
+
+                        </div>
+
+
+                        <div class="task-list">
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox" checked>
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Complete your profile</strong>
+                                    <small>Tell Udaan about yourself</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox" checked>
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore your interests</strong>
+                                    <small>Discover what you enjoy learning</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore scholarship options</strong>
+                                    <small>Discover possible financial support</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Choose a new skill to learn</strong>
+                                    <small>Take your first learning step</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore career pathways</strong>
+                                    <small>Think about your future goals</small>
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="support-card">
+
+                        <div class="support-illustration">🌷</div>
+
+                        <span class="section-tag">A LITTLE REMINDER</span>
+
+                        <h2>Your dreams deserve a chance.</h2>
+
+                        <p>
+                            You don't have to figure everything out today.
+                            Take one small step at a time.
+                        </p>
+
+                        <a href="#agents" class="support-link">
+                            Find your next step →
+                        </a>
+
+                    </article>
+
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="dashboard-footer">
+
+                    <p>
+                        © <span id="dashboard-year"></span> Udaan.
+                        Learn. Earn. Grow.
+                    </p>
+
+                    <p>Built to help every girl move forward. 💜</p>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         EDIT STUDENT MODAL
+    ========================================= -->
+    <div class="udaan-modal-overlay" id="edit-modal" hidden aria-hidden="true" role="dialog" aria-labelledby="edit-modal-title">
+        <div class="udaan-modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-tag">UPDATE RECORD</span>
+                    <h3 id="edit-modal-title">Edit Student Details</h3>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-edit" aria-label="Close modal">✕</button>
+            </div>
+
+            <form id="form-edit-student" novalidate>
+                <input type="hidden" id="edit-student-id">
+
+                <div class="api-form-group">
+                    <label for="edit-student-name">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="edit-student-name" required minlength="2" maxlength="50" autocomplete="name">
+                </div>
+
+                <div class="api-form-group">
+                    <label for="edit-student-email">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="edit-student-email" required autocomplete="email">
+                </div>
+
+                <div class="api-form-group">
+                    <label for="edit-student-course">Course / Programme <span class="required-star">*</span></label>
+                    <input type="text" id="edit-student-course" required minlength="2" maxlength="100">
+                </div>
+
+                <div class="modal-feedback" id="edit-feedback" hidden></div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-udaan-ghost" id="btn-cancel-edit">Cancel</button>
+                    <button type="submit" class="btn-udaan-primary" id="btn-save-edit">
+                        <span class="btn-icon">💾</span>
+                        <span class="btn-text">Save Changes</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================
+         DELETE CONFIRMATION MODAL
+    ========================================= -->
+    <div class="udaan-modal-overlay" id="delete-modal" hidden aria-hidden="true" role="dialog" aria-labelledby="delete-modal-title">
+        <div class="udaan-modal-card delete-card">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-tag danger-tag">CONFIRM ACTION</span>
+                    <h3 id="delete-modal-title">Delete Student Record?</h3>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-delete" aria-label="Close modal">✕</button>
+            </div>
+
+            <div class="delete-modal-body">
+                <p>Are you sure you want to delete <strong id="delete-student-name"></strong>?</p>
+                <p class="delete-warning">Student ID #<span id="delete-student-id"></span> will be permanently removed from the SQLite database.</p>
+            </div>
+
+            <div class="modal-feedback" id="delete-feedback" hidden></div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-udaan-ghost" id="btn-cancel-delete">Cancel</button>
+                <button type="button" class="btn-udaan-danger" id="btn-confirm-delete">
+                    <span class="btn-icon">🗑</span>
+                    <span class="btn-text">Yes, Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
