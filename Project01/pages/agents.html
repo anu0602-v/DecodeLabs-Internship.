@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Agents | Udaan</title>
+
+    <meta
+        name="description"
+        content="Get guidance from Udaan's AI agents for education, scholarships, skills and career planning."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../css/agents.css">
+
+    <script src="../js/agents.js" defer></script>
+</head>
+
+<body>
+
+    <div class="agent-app">
+
+        <!-- MOBILE OVERLAY -->
+        <div class="agent-overlay" id="agent-overlay"></div>
+
+
+        <!-- AGENT SIDEBAR -->
+        <aside class="agent-sidebar" id="agent-sidebar">
+
+            <a href="../index.html" class="agent-brand">
+                <span class="brand-symbol">U</span>
+                <span>udaan<span class="brand-dot">.</span></span>
+            </a>
+
+
+            <a href="dashboard.html" class="back-dashboard">
+                <span>←</span>
+                Back to Dashboard
+            </a>
+
+
+            <div class="agent-sidebar-heading">
+
+                <span>YOUR AI TEAM</span>
+
+                <span class="agent-count">07 AGENTS</span>
+
+            </div>
+
+
+            <!-- AGENT LIST -->
+            <nav class="agent-list" id="agent-list" aria-label="Choose an AI agent">
+
+                <button
+                    type="button"
+                    class="agent-option active"
+                    data-agent="barrier"
+                    aria-pressed="true"
+                >
+                    <span class="agent-option-icon">🧭</span>
+
+                    <span class="agent-option-text">
+                        <strong>Barrier Assessment</strong>
+                        <small>Understand your challenges</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="education"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">🎓</span>
+
+                    <span class="agent-option-text">
+                        <strong>Education Pathway</strong>
+                        <small>Explore learning options</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="scholarship"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">💰</span>
+
+                    <span class="agent-option-text">
+                        <strong>Scholarship & Financial Aid</strong>
+                        <small>Discover financial support</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="earning"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">💼</span>
+
+                    <span class="agent-option-text">
+                        <strong>Earn & Learn</strong>
+                        <small>Explore earning opportunities</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="career"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">🚀</span>
+
+                    <span class="agent-option-text">
+                        <strong>Career & Skill Roadmap</strong>
+                        <small>Plan your career journey</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="mentorship"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">🤝</span>
+
+                    <span class="agent-option-text">
+                        <strong>Women Mentorship & Support</strong>
+                        <small>Find guidance and support</small>
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="agent-option"
+                    data-agent="planner"
+                    aria-pressed="false"
+                >
+                    <span class="agent-option-icon">📅</span>
+
+                    <span class="agent-option-text">
+                        <strong>AI Guidance & Study Planner</strong>
+                        <small>Organise your learning</small>
+                    </span>
+                </button>
+
+            </nav>
+
+
+            <!-- SIDEBAR FOOTER -->
+            <div class="agent-sidebar-footer">
+
+                <div class="sidebar-footer-icon">💜</div>
+
+                <p>
+                    Every question is a step towards your future.
+                </p>
+
+                <span>Udaan · Learn. Earn. Grow.</span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CHAT AREA -->
+        <main class="agent-main">
+
+            <!-- TOP HEADER -->
+            <header class="agent-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="agent-menu-button"
+                        id="agent-menu-button"
+                        aria-label="Open agent menu"
+                        aria-expanded="false"
+                        aria-controls="agent-sidebar"
+                    >
+                        ☰
+                    </button>
+
+                    <div>
+                        <span class="topbar-label">YOUR PERSONAL AI TEAM</span>
+                        <h1>AI Assistant</h1>
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <span class="demo-indicator">
+                        <span class="status-dot"></span>
+                        Demo Mode
+                    </span>
+
+                    <a href="dashboard.html" class="dashboard-link">
+                        Dashboard
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <!-- CHAT HEADER -->
+            <section class="chat-agent-header">
+
+                <div class="selected-agent-icon" id="selected-agent-icon">
+                    🧭
+                </div>
+
+                <div class="selected-agent-info">
+
+                    <h2 id="selected-agent-name">
+                        Barrier Assessment Agent
+                    </h2>
+
+                    <p id="selected-agent-description">
+                        Understand the challenges affecting your journey.
+                    </p>
+
+                </div>
+
+                <span class="agent-status">
+                    <span class="status-dot"></span>
+                    Ready
+                </span>
+
+            </section>
+
+
+            <!-- CHAT MESSAGES -->
+            <section
+                class="chat-content"
+                id="chat-content"
+                aria-label="Conversation"
+                aria-live="polite"
+                aria-relevant="additions"
+            >
+
+                <div class="chat-welcome" id="chat-welcome">
+
+                    <div class="welcome-agent-icon" id="welcome-agent-icon">
+                        🧭
+                    </div>
+
+                    <span class="welcome-label">WELCOME TO UDAAN AI</span>
+
+                    <h2 id="welcome-title">
+                        Let's understand your journey.
+                    </h2>
+
+                    <p id="welcome-description">
+                        I'm here to help you identify challenges
+                        and explore ways to move forward.
+                    </p>
+
+                    <div class="suggestion-heading">
+                        Try asking:
+                    </div>
+
+                    <div class="suggestion-list" id="suggestion-list">
+
+                        <button type="button" class="suggestion-chip">
+                            What challenges might affect my education?
+                        </button>
+
+                        <button type="button" class="suggestion-chip">
+                            How can I overcome financial barriers?
+                        </button>
+
+                        <button type="button" class="suggestion-chip">
+                            Help me plan my next steps.
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Messages are inserted here using JavaScript -->
+                <div class="message-list" id="message-list"></div>
+
+
+                <!-- TYPING INDICATOR -->
+                <div class="typing-indicator" id="typing-indicator" hidden>
+
+                    <span class="typing-avatar" id="typing-avatar">🧭</span>
+
+                    <div class="typing-bubble">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <small id="typing-label">AI is thinking...</small>
+
+                </div>
+
+            </section>
+
+
+            <!-- INPUT AREA -->
+            <footer class="chat-input-area">
+
+                <form class="chat-form" id="chat-form">
+
+                    <label for="message-input" class="visually-hidden">
+                        Type your message
+                    </label>
+
+                    <textarea
+                        id="message-input"
+                        name="message"
+                        placeholder="Ask anything about your journey..."
+                        rows="1"
+                        maxlength="1000"
+                        required
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        id="send-button"
+                        class="send-button"
+                        aria-label="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </form>
+
+                <div class="input-footer">
+
+                    <span>
+                        AI responses in this prototype are simulated.
+                    </span>
+
+                    <span id="character-count">0 / 1000</span>
+
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

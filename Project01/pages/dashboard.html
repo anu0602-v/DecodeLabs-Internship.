@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Udaan</title>
+
+    <meta name="description" content="Your personal Udaan dashboard for learning, earning and growing.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="../js/dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- MOBILE OVERLAY -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="../index.html" class="brand">
+                <span class="brand-icon">U</span>
+                <span>udaan<span class="brand-dot">.</span></span>
+            </a>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">A</div>
+
+                <div>
+                    <h3 id="sidebar-user-name">Ananya</h3>
+                    <p>Udaan Member</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-navigation" aria-label="Main navigation">
+
+                <p class="nav-heading">MENU</p>
+
+                <a href="#overview" class="nav-link active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="#opportunities" class="nav-link">
+                    <span>🎓</span>
+                    Opportunities
+                </a>
+
+                <a href="#agents" class="nav-link">
+                    <span>✦</span>
+                    AI Agents
+                </a>
+
+                <a href="#learning" class="nav-link">
+                    <span>📚</span>
+                    My Learning
+                </a>
+
+
+                <p class="nav-heading support-heading">SUPPORT</p>
+
+                <a href="#support" class="nav-link">
+                    <span>🤝</span>
+                    Get Support
+                </a>
+
+                <a href="#profile" class="nav-link">
+                    <span>👤</span>
+                    My Profile
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <div class="help-icon">💜</div>
+
+                    <h4>Need a little help?</h4>
+
+                    <p>
+                        Your journey matters. We're here to support you.
+                    </p>
+
+                    <a href="#support">Explore support →</a>
+                </div>
+
+                <a href="../index.html" class="logout-link">
+                    <span>↗</span>
+                    Back to Home
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="overview">
+
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="sidebar"
+                >
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    My Space <span>/</span> Dashboard
+                </div>
+
+                <div class="topbar-actions">
+
+                    <span class="topbar-label">Your journey, your pace 💜</span>
+
+                    <div class="topbar-avatar" id="topbar-avatar">A</div>
+
+                </div>
+
+            </header>
+
+
+            <div class="dashboard-content">
+
+
+                <!-- WELCOME SECTION -->
+                <section class="welcome-section">
+
+                    <div class="welcome-text">
+
+                        <span class="welcome-tag">YOUR PERSONAL SPACE</span>
+
+                        <h1>
+                            <span id="greeting">Good morning</span>,
+                            <span id="welcome-name">Ananya</span>! 👋
+                        </h1>
+
+                        <p>
+                            Every small step takes you closer to your dreams.
+                            Let's make today count.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-illustration">
+                        <div class="illustration-circle">
+                            🌸
+                        </div>
+                        <span class="floating-star">✦</span>
+                    </div>
+
+                </section>
+
+
+                <!-- PROFILE AND PROGRESS -->
+                <section class="overview-grid">
+
+                    <article class="overview-card profile-card" id="profile">
+
+                        <div class="card-top">
+                            <span class="card-label">YOUR PROFILE</span>
+                            <span class="card-icon">👤</span>
+                        </div>
+
+                        <h2>Keep growing!</h2>
+
+                        <p class="card-description">
+                            Your profile helps us find opportunities
+                            that match your goals.
+                        </p>
+
+                        <div class="profile-details">
+
+                            <div>
+                                <span>Education</span>
+                                <strong id="profile-education">Undergraduate</strong>
+                            </div>
+
+                            <div>
+                                <span>Main goal</span>
+                                <strong id="profile-goal">Learn new skills</strong>
+                            </div>
+
+                        </div>
+
+                        <a href="#profile" class="text-link">
+                            View profile →
+                        </a>
+
+                    </article>
+
+
+                    <article class="overview-card progress-card" id="learning">
+
+                        <div class="card-top">
+                            <span class="card-label">YOUR LEARNING JOURNEY</span>
+                            <span class="card-icon">📈</span>
+                        </div>
+
+                        <div class="progress-heading">
+                            <h2>You're making progress!</h2>
+                            <strong id="progress-number">40%</strong>
+                        </div>
+
+                        <div
+                            class="dashboard-progress-track"
+                            role="progressbar"
+                            aria-label="Learning task progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="40"
+                            id="dashboard-progress"
+                        >
+                            <div
+                                class="dashboard-progress-fill"
+                                id="dashboard-progress-fill"
+                            ></div>
+                        </div>
+
+                        <p class="card-description">
+                            Complete your suggested tasks to move forward.
+                        </p>
+
+                        <span class="progress-caption" id="progress-caption">
+                            2 of 5 suggested tasks completed
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+                <!-- OPPORTUNITIES -->
+                <section class="dashboard-section" id="opportunities">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-tag">DISCOVER YOUR POTENTIAL</span>
+                            <h2>Opportunities for you</h2>
+                            <p>Explore options that can help you move ahead.</p>
+                        </div>
+
+                        <a href="#opportunities" class="view-all-link">
+                            View all →
+                        </a>
+
+                    </div>
+
+
+                    <div class="opportunity-grid">
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon scholarship-icon">
+                                🎓
+                            </div>
+
+                            <span class="opportunity-type">FINANCIAL SUPPORT</span>
+
+                            <h3>Scholarship Opportunities</h3>
+
+                            <p>
+                                Discover financial assistance programmes
+                                that may support your education.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore scholarships →
+                            </a>
+
+                        </article>
+
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon skill-icon">
+                                💻
+                            </div>
+
+                            <span class="opportunity-type">SKILL DEVELOPMENT</span>
+
+                            <h3>Learn New Skills</h3>
+
+                            <p>
+                                Explore digital skills, communication
+                                and career-focused learning.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore learning →
+                            </a>
+
+                        </article>
+
+
+                        <article class="opportunity-card">
+
+                            <div class="opportunity-icon earning-icon">
+                                💼
+                            </div>
+
+                            <span class="opportunity-type">EARNING OPTIONS</span>
+
+                            <h3>Learn While You Earn</h3>
+
+                            <p>
+                                Discover internships, flexible work
+                                and beginner-friendly opportunities.
+                            </p>
+
+                            <a href="#agents" class="opportunity-link">
+                                Explore opportunities →
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- AI AGENTS -->
+                <section class="dashboard-section" id="agents">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-tag">YOUR PERSONAL AI SUPPORT TEAM</span>
+                            <h2>Meet your Udaan AI agents</h2>
+                            <p>Each agent helps with a different part of your journey.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="agents-grid">
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🧭</div>
+                            <h3>Barrier Assessment</h3>
+                            <p>Understand challenges that may affect your progress.</p>
+                            <button class="agent-button" data-agent="barrier">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🎓</div>
+                            <h3>Education Pathway</h3>
+                            <p>Discover education options and suitable learning paths.</p>
+                            <button class="agent-button" data-agent="education">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">💰</div>
+                            <h3>Scholarship & Financial Aid</h3>
+                            <p>Find possible scholarships and financial support.</p>
+                            <button class="agent-button" data-agent="scholarship">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">💼</div>
+                            <h3>Earn & Learn</h3>
+                            <p>Explore internships and flexible earning options.</p>
+                            <button class="agent-button" data-agent="earning">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🚀</div>
+                            <h3>Career & Skill Roadmap</h3>
+                            <p>Build a practical roadmap towards your career goals.</p>
+                            <button class="agent-button" data-agent="career">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">🤝</div>
+                            <h3>Women Mentorship & Support</h3>
+                            <p>Discover guidance, mentorship and support resources.</p>
+                            <button class="agent-button" data-agent="mentorship">
+                                Explore agent →
+                            </button>
+                        </article>
+
+
+                        <article class="agent-card">
+                            <div class="agent-icon">📅</div>
+                            <h3>AI Guidance & Study Planner</h3>
+                            <p>Organise your learning with a structured study plan.</p>
+                            <button class="agent-button" data-agent="planner">
+                                Explore agent →
+                            </button>
+                        </article>
+
+                    </div>
+
+
+                    <!-- AGENT DETAIL PANEL -->
+                    <div
+                        class="agent-detail-panel"
+                        id="agent-detail-panel"
+                        hidden
+                        aria-live="polite"
+                    >
+
+                        <div class="agent-detail-content">
+                            <span class="detail-tag">UDAAN AI AGENT</span>
+                            <h3 id="agent-detail-title"></h3>
+                            <p id="agent-detail-description"></p>
+                            <span class="coming-soon-label">
+                                Backend integration coming soon
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="close-agent-detail"
+                            class="close-detail-btn"
+                            aria-label="Close agent details"
+                        >
+                            ✕
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TASKS AND SUPPORT -->
+                <section class="bottom-grid" id="support">
+
+                    <article class="tasks-card">
+
+                        <div class="section-heading compact-heading">
+
+                            <div>
+                                <span class="section-tag">SMALL STEPS, BIG DREAMS</span>
+                                <h2>Your next steps</h2>
+                            </div>
+
+                        </div>
+
+
+                        <div class="task-list">
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox" checked>
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Complete your profile</strong>
+                                    <small>Tell Udaan about yourself</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox" checked>
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore your interests</strong>
+                                    <small>Discover what you enjoy learning</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore scholarship options</strong>
+                                    <small>Discover possible financial support</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Choose a new skill to learn</strong>
+                                    <small>Take your first learning step</small>
+                                </span>
+                            </label>
+
+
+                            <label class="task-item">
+                                <input type="checkbox" class="task-checkbox">
+                                <span class="task-checkmark"></span>
+                                <span class="task-text">
+                                    <strong>Explore career pathways</strong>
+                                    <small>Think about your future goals</small>
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="support-card">
+
+                        <div class="support-illustration">🌷</div>
+
+                        <span class="section-tag">A LITTLE REMINDER</span>
+
+                        <h2>Your dreams deserve a chance.</h2>
+
+                        <p>
+                            You don't have to figure everything out today.
+                            Take one small step at a time.
+                        </p>
+
+                        <a href="#agents" class="support-link">
+                            Find your next step →
+                        </a>
+
+                    </article>
+
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="dashboard-footer">
+
+                    <p>
+                        © <span id="dashboard-year"></span> Udaan.
+                        Learn. Earn. Grow.
+                    </p>
+
+                    <p>Built to help every girl move forward. 💜</p>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get Started | Udaan</title>
+
+    <meta name="description" content="Tell Udaan about your learning interests, educational background and goals.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/onboarding.css">
+
+    <script src="../js/onboarding.js" defer></script>
+</head>
+
+<body class="onboarding-body">
+
+    <main class="onboarding-container">
+
+        <!-- Header -->
+        <header class="onboarding-header">
+
+            <a href="../index.html" class="onboarding-logo">
+                <span class="logo-symbol">U</span>
+                <span>udaan<span class="logo-dot">.</span></span>
+            </a>
+
+            <a href="../index.html" class="skip-link">
+                Exit onboarding
+            </a>
+
+        </header>
+
+
+        <!-- Introduction -->
+        <section class="onboarding-intro">
+
+            <span class="intro-tag">YOUR JOURNEY STARTS HERE</span>
+
+            <h1>Let's build your <span>future together.</span></h1>
+
+            <p>
+                Tell us a little about yourself. This helps Udaan
+                understand your goals and recommend opportunities
+                that match your needs.
+            </p>
+
+        </section>
+
+
+        <!-- Onboarding Card -->
+        <section class="onboarding-card">
+
+            <!-- Progress -->
+            <div class="progress-section">
+
+                <div class="progress-info">
+                    <span id="step-label">Step 1 of 4</span>
+                    <span id="progress-percentage">25% completed</span>
+                </div>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Onboarding progress"
+                    aria-valuemin="1"
+                    aria-valuemax="4"
+                    aria-valuenow="1"
+                    id="progress-bar"
+                >
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="step-indicators">
+                    <span class="step-indicator active" data-step="1">1</span>
+                    <span class="step-indicator" data-step="2">2</span>
+                    <span class="step-indicator" data-step="3">3</span>
+                    <span class="step-indicator" data-step="4">4</span>
+                </div>
+
+            </div>
+
+
+            <form id="onboarding-form" novalidate>
+
+                <!-- STEP 1: BASIC PROFILE -->
+                <section class="form-step active" data-step="1">
+
+                    <div class="step-heading">
+                        <span class="step-icon">👋</span>
+
+                        <h2>First, let's know you</h2>
+
+                        <p>
+                            A little introduction helps us make your
+                            experience more personal.
+                        </p>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="display-name">
+                            What should we call you?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="display-name"
+                            name="displayName"
+                            placeholder="Enter your name"
+                            maxlength="50"
+                            autocomplete="given-name"
+                        >
+
+                        <small class="field-hint">
+                            Optional. You can skip this field.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="age-group">
+                            Which age group do you belong to?
+                        </label>
+
+                        <select id="age-group" name="ageGroup" required>
+
+                            <option value="">Select your age group</option>
+                            <option value="Under 18">Under 18</option>
+                            <option value="18–21">18–21</option>
+                            <option value="22–25">22–25</option>
+                            <option value="26–30">26–30</option>
+                            <option value="Above 30">Above 30</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+
+                        </select>
+
+                        <small class="field-error" id="age-error"></small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- STEP 2: EDUCATION -->
+                <section class="form-step" data-step="2" hidden>
+
+                    <div class="step-heading">
+                        <span class="step-icon">🎓</span>
+
+                        <h2>Tell us about your education</h2>
+
+                        <p>
+                            This helps us suggest relevant courses,
+                            scholarships and learning opportunities.
+                        </p>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="education-level">
+                            What is your current education level?
+                        </label>
+
+                        <select id="education-level" name="educationLevel" required>
+
+                            <option value="">Choose education level</option>
+                            <option value="School">School</option>
+                            <option value="Higher Secondary">Higher Secondary</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Postgraduate">Postgraduate</option>
+                            <option value="Graduated">Graduated</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+
+                        <small class="field-error" id="education-error"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            What are you interested in learning?
+                        </label>
+
+                        <p class="field-description">
+                            Select all that interest you.
+                        </p>
+
+                        <div class="choice-grid">
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Technology">
+                                <span>💻 Technology</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Business">
+                                <span>📊 Business</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Healthcare">
+                                <span>🩺 Healthcare</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Design">
+                                <span>🎨 Design</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Finance">
+                                <span>💰 Finance</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="interests" value="Communication">
+                                <span>🗣️ Communication</span>
+                            </label>
+
+                        </div>
+
+                        <small class="field-error" id="interests-error"></small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- STEP 3: CHALLENGES -->
+                <section class="form-step" data-step="3" hidden>
+
+                    <div class="step-heading">
+                        <span class="step-icon">💜</span>
+
+                        <h2>What challenges do you face?</h2>
+
+                        <p>
+                            Understanding your challenges helps us find
+                            better opportunities and support.
+                        </p>
+                    </div>
+
+
+                    <div class="privacy-note">
+                        🔒 This section is optional. Share only what
+                        you feel comfortable sharing.
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Which challenges affect your learning journey?
+                        </label>
+
+                        <p class="field-description">
+                            Select any that apply. You can also skip this step.
+                        </p>
+
+                        <div class="challenge-list">
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Financial difficulties">
+                                <span>💸 Financial difficulties</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Limited access to education">
+                                <span>📚 Limited access to education</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Family responsibilities">
+                                <span>🏠 Family responsibilities</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Mobility or transportation">
+                                <span>🚌 Mobility or transportation</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Safety concerns">
+                                <span>🛡️ Safety concerns</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Limited digital access">
+                                <span>📱 Limited digital access</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Lack of career guidance">
+                                <span>🧭 Lack of career guidance</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="checkbox" name="challenges" value="Other challenges">
+                                <span>✨ Other challenges</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- STEP 4: GOALS -->
+                <section class="form-step" data-step="4" hidden>
+
+                    <div class="step-heading">
+                        <span class="step-icon">🚀</span>
+
+                        <h2>What do you want to achieve?</h2>
+
+                        <p>
+                            Let's understand your goals and how you
+                            prefer to learn.
+                        </p>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="career-goal">
+                            What is your main goal?
+                        </label>
+
+                        <select id="career-goal" name="careerGoal" required>
+
+                            <option value="">Choose your goal</option>
+                            <option value="Continue my education">Continue my education</option>
+                            <option value="Find scholarships">Find scholarships</option>
+                            <option value="Learn new skills">Learn new skills</option>
+                            <option value="Get a job">Get a job</option>
+                            <option value="Start earning">Start earning</option>
+                            <option value="Start a business">Start a business</option>
+                            <option value="Explore career options">Explore career options</option>
+
+                        </select>
+
+                        <small class="field-error" id="goal-error"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            How do you prefer to learn?
+                        </label>
+
+                        <div class="choice-grid">
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Online courses">
+                                <span>💻 Online courses</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Videos">
+                                <span>🎥 Videos</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Reading">
+                                <span>📖 Reading</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Practical projects">
+                                <span>🛠️ Practical projects</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Mentorship">
+                                <span>🤝 Mentorship</span>
+                            </label>
+
+                            <label class="choice-card">
+                                <input type="radio" name="learningMode" value="Not sure yet">
+                                <span>🌱 Not sure yet</span>
+                            </label>
+
+                        </div>
+
+                        <small class="field-error" id="learning-error"></small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- FINAL REVIEW -->
+                <section class="form-step" data-step="5" hidden>
+
+                    <div class="step-heading">
+                        <span class="step-icon">✨</span>
+
+                        <h2>Your journey is ready!</h2>
+
+                        <p>
+                            Review your answers before completing
+                            your Udaan profile.
+                        </p>
+                    </div>
+
+                    <div id="review-content" class="review-content">
+                    </div>
+
+                    <div class="privacy-note">
+                        Your answers are currently held only in this
+                        page's memory. This demo does not submit them
+                        to a server.
+                    </div>
+
+                </section>
+
+
+                <!-- Form Message -->
+                <p
+                    id="form-message"
+                    class="form-message"
+                    role="alert"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+
+                    <button
+                        type="button"
+                        id="previous-btn"
+                        class="nav-btn previous-btn"
+                        disabled
+                    >
+                        ← Previous
+                    </button>
+
+                    <button
+                        type="button"
+                        id="next-btn"
+                        class="nav-btn next-btn"
+                    >
+                        Continue →
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        class="nav-btn next-btn"
+                        hidden
+                    >
+                        Complete Profile ✓
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Completion Message -->
+            <div id="success-screen" class="success-screen" hidden>
+
+                <div class="success-icon">🎉</div>
+
+                <h2>Welcome to Udaan!</h2>
+
+                <p>
+                    Your onboarding demo is complete.
+                    Your next step is to explore opportunities
+                    that can help you learn, earn and grow.
+                </p>
+
+                <a href="../index.html" class="home-btn">
+                    Back to Home →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <footer class="onboarding-footer">
+            <p>© <span id="onboarding-year"></span> Udaan. Learn. Earn. Grow.</p>
+            <p>Every journey deserves an opportunity. 💜</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
